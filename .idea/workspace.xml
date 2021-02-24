@@ -197,7 +197,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/repositories/user.go</url>
+          <url>file://$PROJECT_DIR$/../practice-gorm/repositories/user.go</url>
           <line>61</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>

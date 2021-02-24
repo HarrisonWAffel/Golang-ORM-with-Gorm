@@ -26,6 +26,8 @@ This project uses a simple database as an example of creating models, services, 
 
 
 # to start, run `docker-compose up`
+api docs: https://documenter.getpostman.com/view/7098270/TWDZJwhZ
+
 
 database schema
 ```sql
