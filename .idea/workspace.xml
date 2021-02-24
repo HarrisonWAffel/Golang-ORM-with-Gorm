@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="798547d8-7210-43f8-ba32-d3510f695200" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go Application" />
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="$USER_HOME$/go1.15.3" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1orPJBvsXCoPtGn73XmGqzTwq98" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/posts/repository" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/repositories" />
+      <recent name="$PROJECT_DIR$/posts" />
+      <recent name="$PROJECT_DIR$/auth" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/posts/repository" />
+      <recent name="$PROJECT_DIR$/auth" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build github.com/HarrisonWAffel/dbTrain">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="practice-gorm" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/HarrisonWAffel/dbTrain" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="practice-gorm" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="github.com/HarrisonWAffel/dbTrain" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPost_ToJSON in github.com/HarrisonWAffel/dbTrain/models" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="practice-gorm" />
+      <working_directory value="$PROJECT_DIR$/models" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/HarrisonWAffel/dbTrain/models" />
+      <pattern value="^TestPost_ToJSON$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUserPost_ToJSON in github.com/HarrisonWAffel/dbTrain/models" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="practice-gorm" />
+      <working_directory value="$PROJECT_DIR$/models" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/HarrisonWAffel/dbTrain/models" />
+      <pattern value="^TestUserPost_ToJSON$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="practice-gorm" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="DIRECTORY" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.storage: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="storage" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/HarrisonWAffel/dbTrain" />
+        <item itemvalue="Go Test.TestPost_ToJSON in github.com/HarrisonWAffel/dbTrain/models" />
+        <item itemvalue="Go Test.TestUserPost_ToJSON in github.com/HarrisonWAffel/dbTrain/models" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.storage: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <proxy>direct</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1133" y="371" key="#xdebugger.XInspectDialog" timestamp="1614134699928">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state x="-1133" y="371" key="#xdebugger.XInspectDialog/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614134699928" />
+    <state width="1878" height="214" key="GridCell.Tab.0.bottom" timestamp="1614138852525">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="214" key="GridCell.Tab.0.bottom/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614138852525" />
+    <state width="2156" height="140" key="GridCell.Tab.0.bottom/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614057605300" />
+    <state width="1878" height="214" key="GridCell.Tab.0.center" timestamp="1614138852524">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="214" key="GridCell.Tab.0.center/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614138852524" />
+    <state width="2156" height="140" key="GridCell.Tab.0.center/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614057605299" />
+    <state width="1878" height="214" key="GridCell.Tab.0.left" timestamp="1614138852523">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="214" key="GridCell.Tab.0.left/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614138852523" />
+    <state width="2156" height="140" key="GridCell.Tab.0.left/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614057605299" />
+    <state width="1878" height="214" key="GridCell.Tab.0.right" timestamp="1614138852524">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="214" key="GridCell.Tab.0.right/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614138852524" />
+    <state width="2156" height="140" key="GridCell.Tab.0.right/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614057605300" />
+    <state width="1878" height="773" key="GridCell.Tab.1.bottom" timestamp="1614136103620">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="773" key="GridCell.Tab.1.bottom/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614136103620" />
+    <state width="1878" height="773" key="GridCell.Tab.1.center" timestamp="1614136103619">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="773" key="GridCell.Tab.1.center/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614136103619" />
+    <state width="1878" height="773" key="GridCell.Tab.1.left" timestamp="1614136103619">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="773" key="GridCell.Tab.1.left/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614136103619" />
+    <state width="1878" height="773" key="GridCell.Tab.1.right" timestamp="1614136103620">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="773" key="GridCell.Tab.1.right/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614136103620" />
+    <state x="756" y="384" key="SettingsEditor" timestamp="1614044756104">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="756" y="384" key="SettingsEditor/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614044756104" />
+    <state x="-1900" y="30" width="1898" height="1178" maximized="true" key="dock-window-1" timestamp="1614123280431">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state x="0" y="23" width="1096" height="1177" key="dock-window-1/0.23.1920.1177@0.23.1920.1177" timestamp="1614088451806" />
+    <state x="-1900" y="30" width="1898" height="1178" maximized="true" key="dock-window-1/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614123280431" />
+    <state x="390" y="1463" width="1096" height="1177" key="dock-window-1/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614044672866" />
+    <state x="-1306" y="368" width="692" height="486" key="find.popup" timestamp="1614136596078">
+      <screen x="-1920" y="23" width="1920" height="1177" />
+    </state>
+    <state x="-1306" y="368" width="692" height="486" key="find.popup/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614136596078" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/repositories/user.go</url>
+          <line>61</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

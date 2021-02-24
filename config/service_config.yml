@@ -1,0 +1,9 @@
+database:
+  host: 'storage'
+  name: 'learn'
+  username: 'postgres'
+  password: 'password123'
+  port: 5432
+
+service:
+  port: 8080
