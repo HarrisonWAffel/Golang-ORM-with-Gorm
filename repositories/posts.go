@@ -12,7 +12,7 @@ type PostsRepository struct {
 	db *gorm.DB
 }
 
-func NewPostsRepository(db... *gorm.DB) (*PostsRepository, error) {
+func NewPostsRepository(db ...*gorm.DB) (*PostsRepository, error) {
 	if len(db) > 0 {
 		return &PostsRepository{
 			db: db[0],
@@ -23,7 +23,7 @@ func NewPostsRepository(db... *gorm.DB) (*PostsRepository, error) {
 			return &PostsRepository{}, err
 		}
 		return &PostsRepository{
-			db: db,
+			db: db.Model(&models.Post{}),
 		}, nil
 	}
 }
@@ -35,11 +35,11 @@ func (r *PostsRepository) CreatePost(post models.Post) (models.Post, error) {
 }
 
 func (r *PostsRepository) UpdatePost(post models.Post) error {
-	return r.db.Model(&post).Save(&post).Error
+	return r.db.Save(&post).Error
 }
 
 func (r *PostsRepository) DeletePost(post models.Post) error {
-	return r.db.Model(&post).Delete(&post).Error
+	return r.db.Delete(&post).Error
 }
 
 func (r *PostsRepository) GetPostById(postId uuid.UUID) (models.Post, error) {

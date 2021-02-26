@@ -5,14 +5,13 @@ import (
 	"github.com/HarrisonWAffel/dbTrain/posts"
 	"github.com/HarrisonWAffel/dbTrain/repositories"
 	"github.com/HarrisonWAffel/dbTrain/user"
-	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"log"
 )
 
 type Service struct {
-	repo *repositories.UserPostsRepository
-	userService *user.Service
+	repo         *repositories.UserPostsRepository
+	userService  *user.Service
 	postsService *posts.Service
 }
 
@@ -23,8 +22,8 @@ func NewService(db *gorm.DB, userService *user.Service, postsService *posts.Serv
 	}
 
 	return &Service{
-		repo: repo,
-		userService: userService,
+		repo:         repo,
+		userService:  userService,
 		postsService: postsService,
 	}, nil
 }
@@ -32,7 +31,7 @@ func NewService(db *gorm.DB, userService *user.Service, postsService *posts.Serv
 func (s *Service) CreateNewPost(post models.Post, email string) error {
 
 	u, err := s.userService.GetUserByEmail(email)
-	if  err != nil {
+	if err != nil {
 		return err
 	}
 
@@ -41,7 +40,7 @@ func (s *Service) CreateNewPost(post models.Post, email string) error {
 		return err
 	}
 
-	userPost := models.UserPost {
+	userPost := models.UserPost{
 		UserId:  u.ID,
 		PostId:  post.ID,
 		Private: post.Private,
@@ -76,15 +75,23 @@ func (s *Service) GetUserPostsByUserId(user models.User) ([]models.Post, error) 
 		userPosts = append(userPosts, p)
 	}
 
-
 	return userPosts, nil
 }
 
-func (s *Service) RemoveUserPostByPostId(postId uuid.UUID) error {
-	p, err := s.repo.GetUserPostByPostId(postId)
+func (s *Service) RemoveUserPostByPostId(payload models.Post) error {
+	p, err := s.repo.GetUserPostByPostId(payload.ID)
 	if err != nil {
 		return err
 	}
 
-	return s.repo.DeleteUserPost(p)
+	err = s.repo.DeleteUserPost(p)
+	if err != nil {
+		return err
+	}
+
+	err = s.postsService.DeletePost(payload)
+	if err != nil {
+		return err
+	}
+	return nil
 }

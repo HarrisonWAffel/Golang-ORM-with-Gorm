@@ -10,7 +10,6 @@ import (
 )
 
 func User(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
-
 	switch r.Method {
 	case http.MethodGet:
 		if r.URL.Query().Get("by") == "email" {
@@ -31,7 +30,6 @@ func User(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 			}
 
 			w.Write(user.ToJSON())
-
 
 		} else if r.URL.Query().Get("by") == "id" {
 			var payload struct {
@@ -104,12 +102,10 @@ func User(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-
 func Post(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
 		var payload models.User
-
 		err := json.NewDecoder(r.Body).Decode(&payload)
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
@@ -140,19 +136,18 @@ func Post(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 		}
 
 		email := r.URL.Query().Get("email")
-		if  email == "" {
+		if email == "" {
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
 
 		err = srvCtx.UserPostsService.CreateNewPost(payload, email)
-
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
-		log.Println("post created")
 
+		log.Println("post created")
 
 	case http.MethodPut:
 
@@ -178,15 +173,7 @@ func Post(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		err = srvCtx.UserPostsService.RemoveUserPostByPostId(payload.ID)
-		if err != nil {
-			log.Println(err)
-			w.WriteHeader(http.StatusBadRequest)
-			return
-		}
-
-
-		err = srvCtx.PostsService.DeletePost(payload)
+		err = srvCtx.UserPostsService.RemoveUserPostByPostId(payload)
 		if err != nil {
 			log.Println(err)
 			w.WriteHeader(http.StatusBadRequest)

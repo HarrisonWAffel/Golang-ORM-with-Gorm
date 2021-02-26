@@ -13,7 +13,7 @@ type UserPostsRepository struct {
 	db *gorm.DB
 }
 
-func NewUserPostsRepository(db... *gorm.DB) (*UserPostsRepository, error) {
+func NewUserPostsRepository(db ...*gorm.DB) (*UserPostsRepository, error) {
 	if len(db) > 0 {
 		return &UserPostsRepository{
 			db: db[0],
@@ -24,7 +24,7 @@ func NewUserPostsRepository(db... *gorm.DB) (*UserPostsRepository, error) {
 			return &UserPostsRepository{}, err
 		}
 		return &UserPostsRepository{
-			db: db,
+			db: db.Model(&models.UserPost{}),
 		}, nil
 	}
 }
@@ -42,11 +42,11 @@ func (r *UserPostsRepository) GetUserPostByPostId(postId uuid.UUID) (models.User
 }
 
 func (r *UserPostsRepository) CreateUserPost(post models.UserPost) error {
-	return r.db.Model(&post).Create(&post).Error
+	return r.db.Create(&post).Error
 }
 
 func (r *UserPostsRepository) UpdateUserPost(post models.UserPost) error {
-	return r.db.Model(&post).Save(&post).Error
+	return r.db.Save(&post).Error
 }
 
 func (r *UserPostsRepository) DeleteUserPost(post models.UserPost) error {

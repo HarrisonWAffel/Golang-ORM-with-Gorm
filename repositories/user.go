@@ -13,7 +13,7 @@ type UserRepository struct {
 	db *gorm.DB
 }
 
-func NewUserRepository(db... *gorm.DB) (*UserRepository, error) {
+func NewUserRepository(db ...*gorm.DB) (*UserRepository, error) {
 	if len(db) > 0 {
 		return &UserRepository{
 			db: db[0],
@@ -24,7 +24,7 @@ func NewUserRepository(db... *gorm.DB) (*UserRepository, error) {
 			return &UserRepository{}, err
 		}
 		return &UserRepository{
-			db: db,
+			db: db.Model(&models.User{}),
 		}, nil
 	}
 }
@@ -36,11 +36,11 @@ func (r *UserRepository) CreateUser(user models.User) error {
 }
 
 func (r *UserRepository) UpdateUser(user models.User) error {
-	return r.db.Model(&user).Save(&user).Error
+	return r.db.Save(&user).Error
 }
 
 func (r *UserRepository) DeleteUser(user models.User) error {
-	return r.db.Model(&user).Delete(&user).Error
+	return r.db.Delete(&user).Error
 }
 
 func (r *UserRepository) FindUserById(userId uuid.UUID) (models.User, error) {
