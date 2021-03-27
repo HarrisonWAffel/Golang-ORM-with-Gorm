@@ -1,17 +1,18 @@
-package models
+package userPostService
 
 import (
 	"encoding/json"
+	"github.com/HarrisonWAffel/dbTrain/domain/shared"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"time"
 )
 
 type UserPost struct {
-	Model
-	UserId uuid.UUID `json:"user_id" gorm:"type:uuid"`
-	PostId uuid.UUID `json:"post_id" gorm:"type:uuid"`
-	Private bool `json:"private"`
+	shared.BaseEntity
+	UserId  uuid.UUID `json:"user_id" gorm:"type:uuid"`
+	PostId  uuid.UUID `json:"post_id" gorm:"type:uuid"`
+	Private bool      `json:"private"`
 }
 
 func (u *UserPost) ToJSON() []byte {

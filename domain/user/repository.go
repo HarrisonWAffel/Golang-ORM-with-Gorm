@@ -1,9 +1,8 @@
-package repositories
+package user
 
 import (
 	"errors"
 	"github.com/HarrisonWAffel/dbTrain/config"
-	"github.com/HarrisonWAffel/dbTrain/models"
 	"github.com/google/uuid"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -24,48 +23,48 @@ func NewUserRepository(db ...*gorm.DB) (*UserRepository, error) {
 			return &UserRepository{}, err
 		}
 		return &UserRepository{
-			db: db.Model(&models.User{}),
+			db: db.Model(&User{}),
 		}, nil
 	}
 }
 
 // CRUD!
 
-func (r *UserRepository) CreateUser(user models.User) error {
+func (r *UserRepository) CreateUser(user User) error {
 	return r.db.Create(&user).Error
 }
 
-func (r *UserRepository) UpdateUser(user models.User) error {
+func (r *UserRepository) UpdateUser(user User) error {
 	return r.db.Save(&user).Error
 }
 
-func (r *UserRepository) DeleteUser(user models.User) error {
+func (r *UserRepository) DeleteUser(user User) error {
 	return r.db.Delete(&user).Error
 }
 
-func (r *UserRepository) FindUserById(userId uuid.UUID) (models.User, error) {
-	var foundUser models.User
+func (r *UserRepository) FindUserById(userId uuid.UUID) (User, error) {
+	var foundUser User
 	result := r.db.Find(&foundUser, userId)
 	if result.Error != nil {
-		return models.User{}, result.Error
+		return User{}, result.Error
 	}
 	return foundUser, nil
 }
 
-func (r *UserRepository) FindUserByEmail(email string) (models.User, error) {
-	var foundUser models.User
+func (r *UserRepository) FindUserByEmail(email string) (User, error) {
+	var foundUser User
 	result := r.db.Find(&foundUser, "email = ?", email)
 	if result.Error != nil {
-		return models.User{}, result.Error
+		return User{}, result.Error
 	}
 	if result.RowsAffected == 0 {
-		return models.User{}, errors.New("now rows returned")
+		return User{}, errors.New("now rows returned")
 	}
 	return foundUser, nil
 }
 
-func (r *UserRepository) FindAllUsers() ([]models.User, error) {
-	var allUsers []models.User
+func (r *UserRepository) FindAllUsers() ([]User, error) {
+	var allUsers []User
 	result := r.db.Find(&allUsers)
 	return allUsers, result.Error
 }

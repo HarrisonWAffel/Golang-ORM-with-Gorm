@@ -12,16 +12,16 @@ services:
       - "5432:5432"
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-
-  api:
-    container_name: api
-    networks:
-      - httpNet
-    ports:
-      - "8080:8080"
-    build:
-      context: ./
-      dockerfile: dockerfile.yml
+#
+#  api:
+#    container_name: api
+#    networks:
+#      - httpNet
+#    ports:
+#      - "8080:8080"
+#    build:
+#      context: ./
+#      dockerfile: dockerfile.yml
 
 
 networks:

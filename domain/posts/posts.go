@@ -1,16 +1,17 @@
-package models
+package posts
 
 import (
 	"encoding/json"
+	"github.com/HarrisonWAffel/dbTrain/domain/shared"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"time"
 )
 
 type Post struct {
-	Model
-	Content   string    `json:"content"`
-	Private   bool      `json:"is_private"`
+	shared.BaseEntity
+	Content string `json:"content"`
+	Private bool   `json:"is_private"`
 }
 
 func (p Post) ToJSON() []byte {

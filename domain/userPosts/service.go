@@ -1,34 +1,28 @@
 package userPosts
 
 import (
-	"github.com/HarrisonWAffel/dbTrain/models"
-	"github.com/HarrisonWAffel/dbTrain/posts"
-	"github.com/HarrisonWAffel/dbTrain/repositories"
-	"github.com/HarrisonWAffel/dbTrain/user"
+	"github.com/HarrisonWAffel/dbTrain/domain/posts"
+	"github.com/HarrisonWAffel/dbTrain/domain/user"
 	"gorm.io/gorm"
 	"log"
 )
 
 type Service struct {
-	repo         *repositories.UserPostsRepository
-	userService  *user.Service
-	postsService *posts.Service
+	repo *UserPostsRepository
 }
 
-func NewService(db *gorm.DB, userService *user.Service, postsService *posts.Service) (*Service, error) {
-	repo, err := repositories.NewUserPostsRepository(db)
+func NewService(db *gorm.DB) (*Service, error) {
+	repo, err := NewUserPostsRepository(db)
 	if err != nil {
 		return &Service{}, err
 	}
 
 	return &Service{
-		repo:         repo,
-		userService:  userService,
-		postsService: postsService,
+		repo: repo,
 	}, nil
 }
 
-func (s *Service) CreateNewPost(post models.Post, email string) error {
+func (s *Service) CreateNewPost(post posts.Post, email string) error {
 
 	u, err := s.userService.GetUserByEmail(email)
 	if err != nil {
@@ -40,7 +34,7 @@ func (s *Service) CreateNewPost(post models.Post, email string) error {
 		return err
 	}
 
-	userPost := models.UserPost{
+	userPost := UserPost{
 		UserId:  u.ID,
 		PostId:  post.ID,
 		Private: post.Private,
@@ -54,7 +48,7 @@ func (s *Service) CreateNewPost(post models.Post, email string) error {
 	return nil
 }
 
-func (s *Service) GetUserPostsByUserId(user models.User) ([]models.Post, error) {
+func (s *Service) GetUserPostsByUserId(user user.User) ([]posts.Post, error) {
 
 	dbUser, err := s.userService.GetUserByEmail(user.Email)
 	if err != nil {
@@ -66,9 +60,9 @@ func (s *Service) GetUserPostsByUserId(user models.User) ([]models.Post, error) 
 		return nil, err
 	}
 
-	var userPosts []models.Post
+	var userPosts []posts.Post
 	for _, e := range idList {
-		p, err := s.postsService.GetPostById(e.PostId)
+		p, err := s.postsService.GetPostById(e.ID)
 		if err != nil {
 			return nil, err
 		}
@@ -78,7 +72,7 @@ func (s *Service) GetUserPostsByUserId(user models.User) ([]models.Post, error) 
 	return userPosts, nil
 }
 
-func (s *Service) RemoveUserPostByPostId(payload models.Post) error {
+func (s *Service) RemoveUserPostByPostId(payload posts.Post) error {
 	p, err := s.repo.GetUserPostByPostId(payload.ID)
 	if err != nil {
 		return err

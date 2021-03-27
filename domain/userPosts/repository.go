@@ -1,9 +1,9 @@
-package repositories
+package userPosts
 
 import (
 	"errors"
 	"github.com/HarrisonWAffel/dbTrain/config"
-	"github.com/HarrisonWAffel/dbTrain/models"
+	"github.com/HarrisonWAffel/dbTrain/user"
 	"github.com/google/uuid"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -24,13 +24,13 @@ func NewUserPostsRepository(db ...*gorm.DB) (*UserPostsRepository, error) {
 			return &UserPostsRepository{}, err
 		}
 		return &UserPostsRepository{
-			db: db.Model(&models.UserPost{}),
+			db: db.Model(&UserPost{}),
 		}, nil
 	}
 }
 
-func (r *UserPostsRepository) GetUserPostByPostId(postId uuid.UUID) (models.UserPost, error) {
-	var posts models.UserPost
+func (r *UserPostsRepository) GetUserPostByPostId(postId uuid.UUID) (UserPost, error) {
+	var posts UserPost
 	result := r.db.Find(&posts, "post_id = ?", postId)
 	if result.Error != nil {
 		return posts, nil
@@ -41,20 +41,20 @@ func (r *UserPostsRepository) GetUserPostByPostId(postId uuid.UUID) (models.User
 	return posts, nil
 }
 
-func (r *UserPostsRepository) CreateUserPost(post models.UserPost) error {
+func (r *UserPostsRepository) CreateUserPost(post UserPost) error {
 	return r.db.Create(&post).Error
 }
 
-func (r *UserPostsRepository) UpdateUserPost(post models.UserPost) error {
+func (r *UserPostsRepository) UpdateUserPost(post UserPost) error {
 	return r.db.Save(&post).Error
 }
 
-func (r *UserPostsRepository) DeleteUserPost(post models.UserPost) error {
+func (r *UserPostsRepository) DeleteUserPost(post UserPost) error {
 	return r.db.Delete(&post).Error
 }
 
-func (r *UserPostsRepository) GetUserPostsForUser(user models.User) ([]models.UserPost, error) {
-	var posts []models.UserPost
+func (r *UserPostsRepository) GetUserPostsForUser(user user.User) ([]UserPost, error) {
+	var posts []UserPost
 	result := r.db.Find(&posts, "user_id = ?", user.ID)
 	if result.Error != nil {
 		return nil, nil

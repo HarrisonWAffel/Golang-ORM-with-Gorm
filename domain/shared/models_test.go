@@ -1,4 +1,4 @@
-package models
+package shared
 
 import (
 	"github.com/google/uuid"
@@ -8,7 +8,7 @@ import (
 
 func TestPost_ToJSON(t *testing.T) {
 	p := Post{
-		Model:     Model{
+		BaseEntity: BaseEntity{
 			ID:        uuid.New(),
 			CreatedAt: time.Now(),
 			UpdatedAt: time.Now(),
@@ -26,7 +26,7 @@ func TestPost_ToJSON(t *testing.T) {
 
 func TestUserPost_ToJSON(t *testing.T) {
 	p := UserPost{
-		Model:   Model{
+		BaseEntity: BaseEntity{
 			ID:        uuid.New(),
 			CreatedAt: time.Now(),
 			UpdatedAt: time.Now(),
@@ -41,5 +41,3 @@ func TestUserPost_ToJSON(t *testing.T) {
 		t.FailNow()
 	}
 }
-
-

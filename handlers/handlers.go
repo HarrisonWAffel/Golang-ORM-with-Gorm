@@ -2,7 +2,8 @@ package handlers
 
 import (
 	"encoding/json"
-	"github.com/HarrisonWAffel/dbTrain/models"
+	"github.com/HarrisonWAffel/dbTrain/posts"
+	"github.com/HarrisonWAffel/dbTrain/user"
 	"github.com/HarrisonWAffel/dbTrain/util"
 	"github.com/google/uuid"
 	"log"
@@ -53,7 +54,7 @@ func User(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 		}
 
 	case http.MethodPost:
-		var payload models.User
+		var payload user.User
 		if err := json.NewDecoder(r.Body).Decode(&payload); err != nil {
 			w.WriteHeader(http.StatusBadRequest)
 			return
@@ -76,7 +77,7 @@ func User(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		user := models.User{}
+		user := user.User{}
 		user.ID = payload.UUID
 
 		err := srvCtx.UserService.DeleteUser(user)
@@ -87,7 +88,7 @@ func User(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 		}
 
 	case http.MethodPut:
-		var payload models.User
+		var payload user.User
 		if err := json.NewDecoder(r.Body).Decode(&payload); err != nil {
 			w.WriteHeader(http.StatusBadRequest)
 			return
@@ -105,7 +106,7 @@ func User(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 func Post(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
-		var payload models.User
+		var payload user.User
 		err := json.NewDecoder(r.Body).Decode(&payload)
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
@@ -128,7 +129,7 @@ func Post(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 		w.Write(j)
 
 	case http.MethodPost:
-		var payload models.Post
+		var payload posts.Post
 		err := json.NewDecoder(r.Body).Decode(&payload)
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
@@ -151,7 +152,7 @@ func Post(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 
 	case http.MethodPut:
 
-		var payload models.Post
+		var payload posts.Post
 		err := json.NewDecoder(r.Body).Decode(&payload)
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
@@ -166,7 +167,7 @@ func Post(srvCtx *util.AppCtx, w http.ResponseWriter, r *http.Request) {
 		}
 
 	case http.MethodDelete:
-		var payload models.Post
+		var payload posts.Post
 		err := json.NewDecoder(r.Body).Decode(&payload)
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
