@@ -12,6 +12,7 @@ RUN go build -o main
 FROM alpine:3.9
 
 COPY --from=builder /go/main ./
+COPY --from=builder /go/db ./db
 COPY --from=builder /go/config/service_config.yml ./
 
 ENTRYPOINT ["./main"]

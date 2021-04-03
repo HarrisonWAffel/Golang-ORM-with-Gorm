@@ -2,7 +2,7 @@ package user
 
 import (
 	"encoding/json"
-	"github.com/HarrisonWAffel/dbTrain/domain/shared"
+	"github.com/HarrisonWAffel/dbTrain/domain"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 	"gorm.io/gorm"
@@ -10,7 +10,7 @@ import (
 )
 
 type User struct {
-	shared.BaseEntity
+	domain.BaseEntity
 	UserName  string    `json:"user_name,omitempty"`
 	Password  string    `json:"password,omitempty"`
 	Email     string    `json:"email,omitempty"`

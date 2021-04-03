@@ -3,33 +3,51 @@ package userPosts
 import (
 	"github.com/HarrisonWAffel/dbTrain/domain/posts"
 	"github.com/HarrisonWAffel/dbTrain/domain/user"
+	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"log"
 )
 
-type Service struct {
-	repo *UserPostsRepository
+type Service interface {
+	GetUserPostsByUserId(user user.User) ([]posts.Post, error)
+	CreateNewPost(post posts.Post, email string) error
+	UpdatePost(post posts.Post) error
+	RemoveUserPostByPostId(post posts.Post) error
 }
 
-func NewService(db *gorm.DB) (*Service, error) {
+type service struct {
+	userService   user.Service
+	postsService  posts.Service
+	userPostsRepo *Repository
+}
+
+func NewService(db *gorm.DB, userService user.Service, postsService posts.Service) (Service, error) {
 	repo, err := NewUserPostsRepository(db)
 	if err != nil {
-		return &Service{}, err
+		return &service{}, err
 	}
 
-	return &Service{
-		repo: repo,
+	return &service{
+		userPostsRepo: repo,
+		userService:   userService,
+		postsService:  postsService,
 	}, nil
 }
 
-func (s *Service) CreateNewPost(post posts.Post, email string) error {
+func (s *service) UpdatePost(post posts.Post) error {
+	return s.postsService.UpdatePost(post)
+}
+
+func (s *service) CreateNewPost(post posts.Post, email string) error {
 
 	u, err := s.userService.GetUserByEmail(email)
 	if err != nil {
 		return err
 	}
 
-	post, err = s.postsService.CreatePost(post)
+	post.ID = uuid.New()
+
+	err = s.postsService.CreateNewPost(post)
 	if err != nil {
 		return err
 	}
@@ -40,7 +58,7 @@ func (s *Service) CreateNewPost(post posts.Post, email string) error {
 		Private: post.Private,
 	}
 
-	err = s.repo.CreateUserPost(userPost)
+	err = s.userPostsRepo.Create(userPost)
 	if err != nil {
 		log.Print(err)
 		return err
@@ -48,21 +66,21 @@ func (s *Service) CreateNewPost(post posts.Post, email string) error {
 	return nil
 }
 
-func (s *Service) GetUserPostsByUserId(user user.User) ([]posts.Post, error) {
+func (s *service) GetUserPostsByUserId(user user.User) ([]posts.Post, error) {
 
 	dbUser, err := s.userService.GetUserByEmail(user.Email)
 	if err != nil {
 		return nil, err
 	}
 
-	idList, err := s.repo.GetUserPostsForUser(dbUser)
+	idList, err := s.userPostsRepo.GetUserPostsForUser(dbUser)
 	if err != nil {
 		return nil, err
 	}
 
 	var userPosts []posts.Post
-	for _, e := range idList {
-		p, err := s.postsService.GetPostById(e.ID)
+	for _, userPost := range idList {
+		p, err := s.postsService.GetPostById(userPost.PostId)
 		if err != nil {
 			return nil, err
 		}
@@ -72,13 +90,13 @@ func (s *Service) GetUserPostsByUserId(user user.User) ([]posts.Post, error) {
 	return userPosts, nil
 }
 
-func (s *Service) RemoveUserPostByPostId(payload posts.Post) error {
-	p, err := s.repo.GetUserPostByPostId(payload.ID)
+func (s *service) RemoveUserPostByPostId(payload posts.Post) error {
+	p, err := s.userPostsRepo.GetUserPostByPostId(payload.ID)
 	if err != nil {
 		return err
 	}
 
-	err = s.repo.DeleteUserPost(p)
+	err = s.userPostsRepo.Delete(p)
 	if err != nil {
 		return err
 	}

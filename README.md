@@ -22,6 +22,8 @@ the API handlers are located in `handlers/handlers.go`
 
 the ORM used for this project is Gorm
 
+All database migrations are done using https://github.com/golang-migrate/migrate
+
 This project uses a simple database as an example of creating models, services, and repositories within golang using gorm.
 
 

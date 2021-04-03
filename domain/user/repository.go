@@ -3,55 +3,57 @@ package user
 import (
 	"errors"
 	"github.com/HarrisonWAffel/dbTrain/config"
+	"github.com/HarrisonWAffel/dbTrain/domain"
 	"github.com/google/uuid"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-type UserRepository struct {
+type Repository struct {
 	db *gorm.DB
 }
 
-func NewUserRepository(db ...*gorm.DB) (*UserRepository, error) {
+func NewUserRepository(db ...*gorm.DB) (*Repository, error) {
 	if len(db) > 0 {
-		return &UserRepository{
+		return &Repository{
 			db: db[0],
 		}, nil
 	} else {
 		db, err := gorm.Open(postgres.Open(config.Dsn), &gorm.Config{})
 		if err != nil {
-			return &UserRepository{}, err
+			return &Repository{}, err
 		}
-		return &UserRepository{
+		return &Repository{
 			db: db.Model(&User{}),
 		}, nil
 	}
 }
 
-// CRUD!
-
-func (r *UserRepository) CreateUser(user User) error {
-	return r.db.Create(&user).Error
-}
-
-func (r *UserRepository) UpdateUser(user User) error {
-	return r.db.Save(&user).Error
-}
-
-func (r *UserRepository) DeleteUser(user User) error {
-	return r.db.Delete(&user).Error
-}
-
-func (r *UserRepository) FindUserById(userId uuid.UUID) (User, error) {
+func (r *Repository) GetById(id uuid.UUID) (domain.Entity, error) {
 	var foundUser User
-	result := r.db.Find(&foundUser, userId)
+	result := r.db.Find(&foundUser, id)
 	if result.Error != nil {
 		return User{}, result.Error
 	}
 	return foundUser, nil
 }
 
-func (r *UserRepository) FindUserByEmail(email string) (User, error) {
+func (r *Repository) Create(entity domain.Entity) error {
+	u := entity.(User)
+	return r.db.Create(&u).Error
+}
+
+func (r *Repository) Update(entity domain.Entity) error {
+	u := entity.(User)
+	return r.db.Save(&u).Error
+}
+
+func (r *Repository) Delete(entity domain.Entity) error {
+	u := entity.(User)
+	return r.db.Delete(&u).Error
+}
+
+func (r *Repository) FindUserByEmail(email string) (User, error) {
 	var foundUser User
 	result := r.db.Find(&foundUser, "email = ?", email)
 	if result.Error != nil {
@@ -63,7 +65,7 @@ func (r *UserRepository) FindUserByEmail(email string) (User, error) {
 	return foundUser, nil
 }
 
-func (r *UserRepository) FindAllUsers() ([]User, error) {
+func (r *Repository) FindAllUsers() ([]User, error) {
 	var allUsers []User
 	result := r.db.Find(&allUsers)
 	return allUsers, result.Error

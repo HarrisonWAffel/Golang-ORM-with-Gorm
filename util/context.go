@@ -2,17 +2,17 @@ package util
 
 import (
 	"github.com/HarrisonWAffel/dbTrain/config"
-	"github.com/HarrisonWAffel/dbTrain/posts"
-	"github.com/HarrisonWAffel/dbTrain/user"
-	"github.com/HarrisonWAffel/dbTrain/userPostService"
+	"github.com/HarrisonWAffel/dbTrain/domain/posts"
+	"github.com/HarrisonWAffel/dbTrain/domain/user"
+	"github.com/HarrisonWAffel/dbTrain/domain/userPosts"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
 type AppCtx struct {
-	UserService      *user.Service
-	PostsService     *posts.Service
-	UserPostsService *userPostService.Service
+	UserService      user.Service
+	PostsService     posts.Service
+	UserPostsService userPosts.Service
 }
 
 func NewServiceContext() (*AppCtx, error) {
@@ -36,7 +36,7 @@ func NewServiceContext() (*AppCtx, error) {
 		return &AppCtx{}, err
 	}
 
-	userPostsService, err := userPostService.NewService(db, userService, postsService)
+	userPostsService, err := userPosts.NewService(db, userService, postsService)
 	if err != nil {
 		return &AppCtx{}, err
 	}
