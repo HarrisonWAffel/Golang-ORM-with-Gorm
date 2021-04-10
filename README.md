@@ -1,5 +1,5 @@
 # ORM in Golang using [Gorm](https://gorm.io)
-An example micro-service to serve as an example as for how to possibly use gorm with a psql database in golang
+A simple micro-service to serve as an example as for how to possibly use gorm with a psql database in golang
 
  
 This repository's main goal was practicing gorm, not 
