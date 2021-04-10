@@ -1,8 +1,5 @@
 # ORM in Golang using [Gorm](https://gorm.io)
-An example MVC-like micro-service to serve as an example as for how to possibly use gorm with a psql database in golang
-
-
-
+An example micro-service to serve as an example as for how to possibly use gorm with a psql database in golang
 
  
 This repository's main goal was practicing gorm, not 
@@ -10,22 +7,17 @@ designing a perfect micro-service.
 
 
 list of service packages 
-+ `/posts`
-+ `/user` 
-+ `/userPosts`
++ `domain/posts`
++ `domain/user` 
++ `domain/userPosts`
 
-all database models are located in the `models` folder 
-
-all repository types are located in the `repositories` package
-
-the API handlers are located in `handlers/handlers.go`
+the API handlers are located in `handlers/post/handler.go` and `handlers/user/handler.go`
 
 the ORM used for this project is Gorm
 
 All database migrations are done using https://github.com/golang-migrate/migrate
 
 This project uses a simple database as an example of creating models, services, and repositories within golang using gorm.
-
 
 # to start, run `docker-compose up`
 api docs: https://documenter.getpostman.com/view/7098270/TWDZJwhZ

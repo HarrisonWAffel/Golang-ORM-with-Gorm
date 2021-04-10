@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="798547d8-7210-43f8-ba32-d3510f695200" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/domain/posts/service_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/user/repository_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/user/service_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/repo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/setup.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/posts/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/posts/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/posts/repository_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/posts/repository_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/posts/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/posts/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/user/entity.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/user/entity.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/user/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/user/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/user/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/user/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/types.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/test.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +158,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="minor improvements to services and repositories" />

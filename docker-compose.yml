@@ -12,15 +12,15 @@ services:
       - "5432:5432"
 
 
-#  api:
-#    container_name: api
-#    networks:
-#      - httpNet
-#    ports:
-#      - "8080:8080"
-#    build:
-#      context: ./
-#      dockerfile: dockerfile.yml
+  api:
+    container_name: api
+    networks:
+      - httpNet
+    ports:
+      - "8080:8080"
+    build:
+      context: ./
+      dockerfile: dockerfile.yml
 
 
 networks:
