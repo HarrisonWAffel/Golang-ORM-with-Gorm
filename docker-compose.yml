@@ -1,27 +1,26 @@
-
 services:
   storage:
     image: postgres
     container_name: storage
     environment:
       - POSTGRES_USER=postgres
+      - POSTGRES_DB=learn
       - POSTGRES_PASSWORD=password123
     networks:
       - httpNet
     ports:
       - "5432:5432"
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
-  api:
-    container_name: api
-    networks:
-      - httpNet
-    ports:
-      - "8080:8080"
-    build:
-      context: ./
-      dockerfile: dockerfile.yml
+
+#  api:
+#    container_name: api
+#    networks:
+#      - httpNet
+#    ports:
+#      - "8080:8080"
+#    build:
+#      context: ./
+#      dockerfile: dockerfile.yml
 
 
 networks:

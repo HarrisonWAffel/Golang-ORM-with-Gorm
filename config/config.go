@@ -9,16 +9,14 @@ import (
 
 //To override default values use env vars with prefix LIFE_POD_LOAD_TEST_APP, i.e:
 var (
-	v *viper.Viper
- 	propertyNames map[string]struct{}
-	Dsn string
+	v             *viper.Viper
+	propertyNames map[string]struct{}
+	Dsn           string
 )
 
 func init() {
 	v = viper.New()
 }
-
-
 
 func Read() error {
 	v.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
@@ -27,6 +25,9 @@ func Read() error {
 	v.SetConfigType("yaml")
 	v.AddConfigPath(".")
 	v.AddConfigPath("./config")
+	v.AddConfigPath("../config")
+	v.AddConfigPath("../../config")
+	v.AddConfigPath("../../../config")
 
 	err := v.ReadInConfig()
 	if err != nil {

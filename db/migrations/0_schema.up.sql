@@ -1,5 +1,4 @@
-CREATE DATABASE learn;
-\c learn;
+
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE users (
                        id uuid DEFAULT uuid_generate_v4 () UNIQUE NOT NULL,
@@ -35,3 +34,4 @@ CREATE TABLE user_posts (
                             FOREIGN KEY (user_id)
                                 REFERENCES users (id)
 );
+

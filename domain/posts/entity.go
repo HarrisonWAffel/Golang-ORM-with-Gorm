@@ -1,16 +1,17 @@
-package models
+package posts
 
 import (
 	"encoding/json"
+	"github.com/HarrisonWAffel/dbTrain/domain"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"time"
 )
 
 type Post struct {
-	Model
-	Content   string    `json:"content"`
-	Private   bool      `json:"is_private"`
+	domain.BaseEntity
+	Content string `json:"content"`
+	Private bool   `json:"is_private"`
 }
 
 func (p Post) ToJSON() []byte {
@@ -19,7 +20,9 @@ func (p Post) ToJSON() []byte {
 }
 
 func (u *Post) BeforeCreate(tx *gorm.DB) (err error) {
-	u.ID = uuid.New()
+	if u.ID == uuid.Nil {
+		u.ID = uuid.New()
+	}
 	u.CreatedAt = time.Now()
 	u.UpdatedAt = time.Now()
 	return nil

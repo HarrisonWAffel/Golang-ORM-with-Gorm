@@ -1,7 +1,8 @@
-package models
+package user
 
 import (
 	"encoding/json"
+	"github.com/HarrisonWAffel/dbTrain/domain"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 	"gorm.io/gorm"
@@ -9,7 +10,7 @@ import (
 )
 
 type User struct {
-	Model
+	domain.BaseEntity
 	UserName  string    `json:"user_name,omitempty"`
 	Password  string    `json:"password,omitempty"`
 	Email     string    `json:"email,omitempty"`
@@ -17,7 +18,9 @@ type User struct {
 }
 
 func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
-	u.ID = uuid.New()
+	if u.ID == uuid.Nil {
+		u.ID = uuid.New()
+	}
 	u.CreatedAt = time.Now()
 	u.UpdatedAt = time.Now()
 	return nil
