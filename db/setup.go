@@ -3,7 +3,6 @@ package db
 import (
 	"database/sql"
 	"fmt"
-	"github.com/HarrisonWAffel/dbTrain/config"
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/postgres"
 	_ "github.com/golang-migrate/migrate/v4/source/file"
@@ -13,8 +12,8 @@ import (
 	"runtime"
 )
 
-func AutoMigrate() error {
-	db, err := sql.Open("postgres", config.Dsn)
+func AutoMigrate(dsn string) error {
+	db, err := sql.Open("postgres", dsn)
 	if err != nil {
 		return err
 	}
@@ -38,10 +37,8 @@ func AutoMigrate() error {
 		basepath = "/db"
 	}
 
-	pth := fmt.Sprintf("file://%s/migrations", basepath)
-	fmt.Println(pth)
 	m, err := migrate.NewWithDatabaseInstance(
-		pth,
+		fmt.Sprintf("file://%s/migrations", basepath),
 		"postgres", driver)
 	if err != nil {
 		return err

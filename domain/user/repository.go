@@ -35,6 +35,9 @@ func (r *Repository) GetById(id uuid.UUID) (domain.Entity, error) {
 	if result.Error != nil {
 		return User{}, result.Error
 	}
+	if result.RowsAffected == 0 {
+		return nil, errors.New("no rows returned")
+	}
 	return foundUser, nil
 }
 

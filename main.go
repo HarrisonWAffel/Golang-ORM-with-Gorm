@@ -19,7 +19,7 @@ func main() {
 		panic(err)
 	}
 
-	if err := db.AutoMigrate(); err != nil {
+	if err := db.AutoMigrate(config.Dsn); err != nil {
 		if err.Error() != "no change" {
 			panic(err)
 		}

@@ -2,40 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="798547d8-7210-43f8-ba32-d3510f695200" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/setup.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/posts/repository_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/posts/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/user/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/post/handler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/user/handler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/posts/service_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/user/repository_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/user/service_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/repo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/setup.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerfile.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dockerfile.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/posts/posts.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/posts/entity.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/posts/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/posts/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/shared/entity.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/baseEntity.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/shared/models_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/shared/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/repositoryInterface.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/shared/service.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/posts/repository_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/posts/repository_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/posts/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/posts/service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/user/entity.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/user/entity.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/user/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/user/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/user/entity.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/userPosts/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/userPosts/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/userPosts/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/userPosts/service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/user/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/user/service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/handlers.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/0_schema.up.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/types.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userPostService/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/userPosts/entity.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/context.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/test.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="177" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,7 +56,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -73,7 +65,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/domain/user" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -81,13 +73,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/domain/posts" />
       <recent name="$PROJECT_DIR$/domain" />
       <recent name="$PROJECT_DIR$/domain/userPosts" />
-      <recent name="$PROJECT_DIR$/userPosts" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/domain/user" />
       <recent name="$PROJECT_DIR$/posts/repository" />
       <recent name="$PROJECT_DIR$/auth" />
     </key>
@@ -104,64 +97,61 @@
       <module name="practice-gorm" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/main.go" />
       <package value="github.com/HarrisonWAffel/dbTrain" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="TestPost_ToJSON in github.com/HarrisonWAffel/dbTrain/models" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPostRepository in github.com/HarrisonWAffel/dbTrain/domain/posts" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="practice-gorm" />
-      <working_directory value="$PROJECT_DIR$/models" />
-      <framework value="gotest" />
+      <working_directory value="$PROJECT_DIR$/domain/posts" />
       <kind value="PACKAGE" />
-      <package value="github.com/HarrisonWAffel/dbTrain/models" />
-      <pattern value="^TestPost_ToJSON$" />
+      <package value="github.com/HarrisonWAffel/dbTrain/domain/posts" />
+      <framework value="gotest" />
+      <pattern value="^TestPostRepository$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestUserPost_ToJSON in github.com/HarrisonWAffel/dbTrain/models" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestUserPostsRepository in github.com/HarrisonWAffel/dbTrain/domain/userPosts" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="practice-gorm" />
-      <working_directory value="$PROJECT_DIR$/models" />
-      <framework value="gotest" />
+      <working_directory value="$PROJECT_DIR$/domain/userPosts" />
+      <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/HarrisonWAffel/dbTrain/models" />
-      <pattern value="^TestUserPost_ToJSON$" />
+      <package value="github.com/HarrisonWAffel/dbTrain/domain/userPosts" />
+      <framework value="gotest" />
+      <pattern value="^\QTestUserPostsRepository\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUserRepository in github.com/HarrisonWAffel/dbTrain/domain/user" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="practice-gorm" />
+      <working_directory value="$PROJECT_DIR$/domain/user" />
+      <kind value="PACKAGE" />
+      <package value="github.com/HarrisonWAffel/dbTrain/domain/user" />
+      <framework value="gotest" />
+      <pattern value="^TestUserRepository$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="practice-gorm" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
-      <framework value="gotest" />
       <kind value="DIRECTORY" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.storage: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="storage" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
+    <configuration name="go test domain" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="practice-gorm" />
+      <working_directory value="$PROJECT_DIR$/domain" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$/domain" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build github.com/HarrisonWAffel/dbTrain" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Go Test.TestPost_ToJSON in github.com/HarrisonWAffel/dbTrain/models" />
-        <item itemvalue="Go Test.TestUserPost_ToJSON in github.com/HarrisonWAffel/dbTrain/models" />
-        <item itemvalue="Docker.docker-compose.yml.storage: Compose Deployment" />
+        <item itemvalue="Go Test.TestUserPostsRepository in github.com/HarrisonWAffel/dbTrain/domain/userPosts" />
+        <item itemvalue="Go Test.go test domain" />
+        <item itemvalue="Go Test.TestUserRepository in github.com/HarrisonWAffel/dbTrain/domain/user" />
+        <item itemvalue="Go Test.TestPostRepository in github.com/HarrisonWAffel/dbTrain/domain/posts" />
       </list>
     </recent_temporary>
   </component>
@@ -182,100 +172,49 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="minor improvements to services and repositories" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor improvements to services and repositories" />
+    <MESSAGE value="v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+    <environment>
+      <map>
+        <entry key="GOPROXY" value="direct" />
+      </map>
+    </environment>
     <proxy>direct</proxy>
   </component>
-  <component name="WindowStateProjectService">
-    <state x="-1147" y="334" key="#com.intellij.ide.util.MemberChooser" timestamp="1616722817008">
-      <screen x="-1920" y="23" width="1920" height="1177" />
-    </state>
-    <state x="-1147" y="334" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1616722817008" />
-    <state x="-1133" y="371" key="#xdebugger.XInspectDialog" timestamp="1614134699928">
-      <screen x="-1920" y="23" width="1920" height="1177" />
-    </state>
-    <state x="-1133" y="371" key="#xdebugger.XInspectDialog/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614134699928" />
-    <state x="934" y="1655" key="CommitChangelistDialog2" timestamp="1617488282575">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state x="-1376" y="215" key="CommitChangelistDialog2/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614310833333" />
-    <state x="934" y="1655" key="CommitChangelistDialog2/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617488282575" />
-    <state x="-1760" y="123" width="1720" height="977" key="DiffContextDialog" timestamp="1614310235089">
-      <screen x="-1920" y="23" width="1920" height="1177" />
-    </state>
-    <state x="-1760" y="123" width="1720" height="977" key="DiffContextDialog/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614310235089" />
-    <state width="1878" height="214" key="GridCell.Tab.0.bottom" timestamp="1617488282675">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state width="1878" height="214" key="GridCell.Tab.0.bottom/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1616720582481" />
-    <state width="2156" height="140" key="GridCell.Tab.0.bottom/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614057605300" />
-    <state width="1878" height="214" key="GridCell.Tab.0.bottom/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617488282675" />
-    <state width="1878" height="214" key="GridCell.Tab.0.center" timestamp="1617488282673">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state width="1878" height="214" key="GridCell.Tab.0.center/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1616720582480" />
-    <state width="2156" height="140" key="GridCell.Tab.0.center/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614057605299" />
-    <state width="1878" height="214" key="GridCell.Tab.0.center/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617488282673" />
-    <state width="1878" height="214" key="GridCell.Tab.0.left" timestamp="1617488282673">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state width="1878" height="214" key="GridCell.Tab.0.left/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1616720582480" />
-    <state width="2156" height="140" key="GridCell.Tab.0.left/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614057605299" />
-    <state width="1878" height="214" key="GridCell.Tab.0.left/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617488282673" />
-    <state width="1878" height="214" key="GridCell.Tab.0.right" timestamp="1617488282674">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state width="1878" height="214" key="GridCell.Tab.0.right/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1616720582481" />
-    <state width="2156" height="140" key="GridCell.Tab.0.right/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614057605300" />
-    <state width="1878" height="214" key="GridCell.Tab.0.right/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617488282674" />
-    <state width="1878" height="211" key="GridCell.Tab.1.bottom" timestamp="1617487791322">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state width="1878" height="773" key="GridCell.Tab.1.bottom/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614141217791" />
-    <state width="1878" height="211" key="GridCell.Tab.1.bottom/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617487791322" />
-    <state width="1878" height="211" key="GridCell.Tab.1.center" timestamp="1617487791321">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state width="1878" height="773" key="GridCell.Tab.1.center/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614141217789" />
-    <state width="1878" height="211" key="GridCell.Tab.1.center/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617487791321" />
-    <state width="1878" height="211" key="GridCell.Tab.1.left" timestamp="1617487791321">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state width="1878" height="773" key="GridCell.Tab.1.left/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614141217788" />
-    <state width="1878" height="211" key="GridCell.Tab.1.left/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617487791321" />
-    <state width="1878" height="211" key="GridCell.Tab.1.right" timestamp="1617487791321">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state width="1878" height="773" key="GridCell.Tab.1.right/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614141217789" />
-    <state width="1878" height="211" key="GridCell.Tab.1.right/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617487791321" />
-    <state x="756" y="384" key="SettingsEditor" timestamp="1614044756104">
-      <screen x="0" y="23" width="2560" height="1417" />
-    </state>
-    <state x="756" y="384" key="SettingsEditor/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614044756104" />
-    <state x="-1300" y="351" key="Vcs.Push.Dialog.v2" timestamp="1614310838129">
-      <screen x="-1920" y="23" width="1920" height="1177" />
-    </state>
-    <state x="-1300" y="351" key="Vcs.Push.Dialog.v2/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614310838129" />
-    <state x="-1900" y="30" width="1898" height="1178" maximized="true" key="dock-window-1" timestamp="1614123280431">
-      <screen x="-1920" y="23" width="1920" height="1177" />
-    </state>
-    <state x="0" y="23" width="1096" height="1177" key="dock-window-1/0.23.1920.1177@0.23.1920.1177" timestamp="1614088451806" />
-    <state x="-1900" y="30" width="1898" height="1178" maximized="true" key="dock-window-1/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614123280431" />
-    <state x="390" y="1463" width="1096" height="1177" key="dock-window-1/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@0.23.2560.1417" timestamp="1614044672866" />
-    <state x="-1306" y="368" width="692" height="486" key="find.popup" timestamp="1614136596078">
-      <screen x="-1920" y="23" width="1920" height="1177" />
-    </state>
-    <state x="-1306" y="368" width="692" height="486" key="find.popup/0.23.2560.1417/-1920.23.1920.1177@-1920.23.1920.1177" timestamp="1614136596078" />
-    <state x="1015" y="1728" width="670" height="676" key="search.everywhere.popup" timestamp="1617478643778">
-      <screen x="390" y="1463" width="1920" height="1177" />
-    </state>
-    <state x="1015" y="1728" width="670" height="676" key="search.everywhere.popup/2560.23.2560.1417/0.23.2560.1417/390.1463.1920.1177@390.1463.1920.1177" timestamp="1617478643778" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/domain/user/repository.go</url>
+          <line>45</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/domain/user/repository.go</url>
+          <line>50</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/domain/user/repository_test.go</url>
+          <line>21</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/practice_gorm$go_test_user.out" NAME="go test user Coverage Results" MODIFIED="1617576901641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/practice_gorm$TestPostRepository_in_github_com_HarrisonWAffel_dbTrain_domain_posts.out" NAME="TestPostRepository in github.com/HarrisonWAffel/dbTrain/domain/posts Coverage Results" MODIFIED="1617575568413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/practice_gorm$go_test_posts.out" NAME="go test posts Coverage Results" MODIFIED="1617576613822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/practice_gorm$TestPostRepository_in_github_com_HarrisonWAffel_dbTrain_domain_user.out" NAME="TestPostRepository in github.com/HarrisonWAffel/dbTrain/domain/user Coverage Results" MODIFIED="1617577003208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

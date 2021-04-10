@@ -34,7 +34,10 @@ func (s *service) GetUserByEmail(email string) (User, error) {
 
 func (s *service) GetUserById(id uuid.UUID) (User, error) {
 	e, err := s.repo.GetById(id)
-	u := e.(User)
+	var u User
+	if err == nil {
+		u = e.(User)
+	}
 	return u, err
 }
 

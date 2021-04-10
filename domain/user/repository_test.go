@@ -1,6 +1,7 @@
-package posts
+package user
 
 import (
+	"github.com/HarrisonWAffel/dbTrain/config"
 	"github.com/HarrisonWAffel/dbTrain/domain"
 	"github.com/HarrisonWAffel/dbTrain/test"
 	"github.com/google/uuid"
@@ -11,12 +12,16 @@ import (
 	"time"
 )
 
-func TestPostRepository(t *testing.T) {
+func TestUserRepository(t *testing.T) {
 	tester = RepoTester{}
 	tester.StartMockDatabase()
+	err := config.Read()
+	if err != nil {
+		panic(err)
+	}
 	db, err := gorm.Open(postgres.Open(tester.DSN), nil)
 	require.NoError(t, err)
-	repo, err := NewPostsRepository(db)
+	repo, err := NewUserRepository(db)
 	require.NoError(t, err)
 	tester.repo = repo
 
@@ -34,36 +39,38 @@ type RepoTester struct {
 }
 
 var (
-	testPost = Post{
+	testUser = User{
 		BaseEntity: domain.BaseEntity{
 			ID:        uuid.New(),
 			CreatedAt: time.Now(),
 			UpdatedAt: time.Now(),
 			DeletedAt: nil,
 		},
-		Content: "CONTENT",
-		Private: false,
+		UserName:  "username",
+		Password:  "password",
+		Email:     "email",
+		LastLogin: time.Now(),
 	}
 	tester RepoTester
 )
 
 func (t2 *RepoTester) CreateTest(t *testing.T) {
-	require.NoError(t, t2.repo.Create(testPost))
+	require.NoError(t, t2.repo.Create(testUser))
 }
 
 func (t2 *RepoTester) GetByIdTest(t *testing.T) {
-	rt, err := t2.repo.GetById(testPost.ID)
+	rt, err := t2.repo.GetById(testUser.ID)
 	require.NoError(t, err)
 	t.Log(rt)
 }
 
 func (t2 *RepoTester) UpdateTest(t *testing.T) {
-	testPost.Content = "UPDATED"
-	require.NoError(t, t2.repo.Update(testPost))
+	testUser.Email = "UPDATED"
+	require.NoError(t, t2.repo.Update(testUser))
 }
 
 func (t2 *RepoTester) DeleteTest(t *testing.T) {
-	require.NoError(t, t2.repo.Delete(testPost))
-	_, err := t2.repo.GetById(testPost.ID)
+	require.NoError(t, t2.repo.Delete(testUser))
+	_, err := t2.repo.GetById(testUser.ID)
 	require.Error(t, err)
 }

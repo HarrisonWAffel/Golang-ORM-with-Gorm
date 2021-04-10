@@ -6,7 +6,6 @@ import (
 )
 
 type Service interface {
-	GetPostsByUserId(userId uuid.UUID) ([]Post, error)
 	GetPostById(id uuid.UUID) (Post, error)
 	CreateNewPost(post Post) error
 	UpdatePost(post Post) error
@@ -25,13 +24,12 @@ func NewService(dbConn *gorm.DB) (Service, error) {
 	return &service{repo: postRepo}, nil
 }
 
-func (s *service) GetPostsByUserId(userId uuid.UUID) ([]Post, error) {
-	return s.repo.GetPostsByUserId(userId)
-}
-
 func (s *service) GetPostById(id uuid.UUID) (Post, error) {
 	e, err := s.repo.GetById(id)
-	p := e.(Post)
+	var p Post
+	if err == nil {
+		p = e.(Post)
+	}
 	return p, err
 }
 

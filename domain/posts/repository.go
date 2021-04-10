@@ -1,6 +1,7 @@
 package posts
 
 import (
+	"fmt"
 	"github.com/HarrisonWAffel/dbTrain/config"
 	"github.com/HarrisonWAffel/dbTrain/domain"
 	"github.com/google/uuid"
@@ -18,6 +19,8 @@ func NewPostsRepository(db ...*gorm.DB) (*Repository, error) {
 			db: db[0],
 		}, nil
 	} else {
+		config.Read()
+		fmt.Println(config.Dsn)
 		db, err := gorm.Open(postgres.Open(config.Dsn), &gorm.Config{})
 		if err != nil {
 			return &Repository{}, err
@@ -51,13 +54,4 @@ func (r *Repository) Update(entity domain.Entity) error {
 func (r *Repository) Delete(entity domain.Entity) error {
 	post := entity.(Post)
 	return r.db.Delete(&post).Error
-}
-
-func (r *Repository) GetPostsByUserId(userId uuid.UUID) ([]Post, error) {
-	var foundPost []Post
-	result := r.db.Find(&foundPost, "user_id = ?", userId)
-	if result.Error != nil {
-		return []Post{}, result.Error
-	}
-	return foundPost, nil
 }
