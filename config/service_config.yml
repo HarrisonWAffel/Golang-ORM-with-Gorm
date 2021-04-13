@@ -1,5 +1,5 @@
 database:
-  host: 'localhost'
+  host: 'storage'
   name: 'learn'
   username: 'postgres'
   password: 'password123'
